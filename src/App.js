@@ -1,14 +1,13 @@
-import React from "react";
+import React,{ useState } from "react";
 import { Switch, Route, Redirect, NavLink } from "react-router-dom";
 
 import { AppointmentsPage } from "./containers/appointmentsPage/AppointmentsPage";
 import { ContactsPage } from "./containers/contactsPage/ContactsPage";
 
 function App() {
-  /*
-  Define state variables for 
-  contacts and appointments 
-  */
+  // holds all of the appointments in the appointments array object, setAppointment adds a new object to the appoinments
+  let [ appointments, setAppointment ] = useState([])
+  let [ contacts, setContact ] = useState([])
 
   const ROUTES = {
     CONTACTS: "/contacts",
@@ -19,6 +18,7 @@ function App() {
   Implement functions to add data to
   contacts and appointments
   */
+ // functio
 
   return (
     <>
