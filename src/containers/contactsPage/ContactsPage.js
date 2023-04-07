@@ -1,6 +1,6 @@
 import React from "react";
 
-export const ContactsPage = () => {
+export const ContactsPage = ({contacts}) => {
   /*
   Define state variables for 
   contact info and duplicate check
@@ -27,6 +27,12 @@ export const ContactsPage = () => {
       <hr />
       <section>
         <h2>Contacts</h2>
+        {
+          // list out all of the contacts that were pumped from the array
+          contacts.map( (contact) => {
+            <h1> { contact.name } </h1>
+          })
+        }
       </section>
     </div>
   );

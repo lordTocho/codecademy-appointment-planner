@@ -7,7 +7,9 @@ import { ContactsPage } from "./containers/contactsPage/ContactsPage";
 function App() {
   // holds all of the appointments in the appointments array object, setAppointment adds a new object to the appoinments
   let [ appointments, setAppointment ] = useState([])
-  let [ contacts, setContact ] = useState([])
+  let [ contacts, setContacts ] = useState([{
+    name: "Brian H"
+  }])
 
   const ROUTES = {
     CONTACTS: "/contacts",
@@ -18,7 +20,15 @@ function App() {
   Implement functions to add data to
   contacts and appointments
   */
- // functio
+
+  // adding one contact object at a time
+ const addContact = ( contact ) => {
+  setContacts( prev => [...prev, contact]);
+ }
+
+ const addAppintment = ( appointment ) => {
+  setAppointment( ( appointment ) => [ appointments, ...appointment ])
+ }
 
   return (
     <>
@@ -37,11 +47,11 @@ function App() {
           </Route>
           <Route path={ROUTES.CONTACTS}>
              {/* Add props to ContactsPage */}
-            <ContactsPage />
+            <ContactsPage contacts={contacts}/>
           </Route>
           <Route path={ROUTES.APPOINTMENTS}>
             {/* Add props to AppointmentsPage */}
-            <AppointmentsPage />
+            <AppointmentsPage appointments={appointments}/>
           </Route>
         </Switch>
       </main>
